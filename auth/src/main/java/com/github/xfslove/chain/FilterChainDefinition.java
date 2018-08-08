@@ -20,21 +20,21 @@ public class FilterChainDefinition implements CustomFilterChainDefinition {
   public LinkedHashMap<String, String> getFilterChainMap() {
     LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
 
-    filterChainDefinitionMap.put("/login", "anon");
-    filterChainDefinitionMap.put("/do-login", "anon");
     filterChainDefinitionMap.put("/favicon.ico", "anon");
     filterChainDefinitionMap.put("/error", "anon");
+    filterChainDefinitionMap.put("/login", "anon");
+    filterChainDefinitionMap.put("/do-login", "anon");
 
-    LOGGER.info("uaa filter chain: {} {}", "/login", "anon");
-    LOGGER.info("uaa filter chain: {} {}", "/do-login", "anon");
     LOGGER.info("uaa filter chain: {} {}", "/favicon.ico", "anon");
     LOGGER.info("uaa filter chain: {} {}", "/error", "anon");
+    LOGGER.info("uaa filter chain: {} {}", "/login", "anon");
+    LOGGER.info("uaa filter chain: {} {}", "/do-login", "anon");
 
     return filterChainDefinitionMap;
   }
 
   @Override
   public int getOrder() {
-    return LOWEST_PRECEDENCE - 1;
+    return 0;
   }
 }

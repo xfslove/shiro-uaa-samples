@@ -1,7 +1,6 @@
 package com.github.xfslove.chain;
 
 import com.github.xfslove.autoconfigure.shiro.filter.CustomFilterChainDefinition;
-import com.github.xfslove.autoconfigure.shiro.filter.OAuth2ServerFilterChainDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -14,7 +13,7 @@ import java.util.LinkedHashMap;
 @Component
 public class FilterChainDefinition implements CustomFilterChainDefinition {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(OAuth2ServerFilterChainDefinition.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(FilterChainDefinition.class);
 
   @Override
   public LinkedHashMap<String, String> getFilterChainMap() {

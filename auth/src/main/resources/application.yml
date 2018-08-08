@@ -1,0 +1,28 @@
+server:
+  port: 8180
+
+shiro:
+  loginUrl: /login
+  uaa:
+    server:
+      clients:
+        - name: cli1
+          clientId: cli1
+          clientSecret: cli1
+      roles:
+        - name: role1
+          clientId: cli1
+          permCodes: perm1, perm2
+        - name: role2
+          clientId: cli1
+          permCodes: perm3, perm4
+      accounts:
+        - username: test1
+          password: 123
+          roles: role1
+        - username: test2
+          password: 123456
+          roles: role2
+spring:
+  thymeleaf:
+    mode: HTML

@@ -1,6 +1,6 @@
 package com.github.xfslove.chain;
 
-import com.github.xfslove.autoconfigure.shiro.filter.CustomFilterChainDefinition;
+import com.github.xfslove.shiro.uaa.filter.CustomFilterChainDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

@@ -1,9 +1,11 @@
 package com.github.xfslove.controller;
 
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -63,5 +65,15 @@ public class ResourceController {
   ) {
     model.addAttribute("username", SecurityUtils.getSubject().getPrincipals().getPrimaryPrincipal());
     return "view4";
+  }
+
+  @ExceptionHandler(AuthorizationException.class)
+  public String handle(
+      Model model,
+      AuthorizationException e
+  ) {
+    String message = e.getMessage();
+    model.addAttribute("message", message);
+    return "error";
   }
 }

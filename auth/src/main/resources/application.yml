@@ -1,14 +1,23 @@
 server:
   port: 8180
+  context-path: /auth
 
 shiro:
   loginUrl: /login
   uaa:
     server:
+      # access token 的过期时间影响resource server到auth server校验token的时间
+      # 当用户从一个应用登出后，会到auth server把相应的token删除
+      # 所以，此时间设置的短，可以变相的实现single sign out
+      # 但是，同时会增加到auth server的校验次数
+      # accessTokenExpires: 10
       clients:
         - name: cli1
           clientId: cli1
           clientSecret: cli1
+        - name: cli2
+          clientId: cli2
+          clientSecret: cli2
       roles:
         - name: role1
           clientId: cli1

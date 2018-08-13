@@ -18,6 +18,7 @@
   <modules>
     <module>resource</module>
     <module>auth</module>
+    <module>resource-2</module>
   </modules>
 
 </project>

@@ -17,6 +17,10 @@
 
   到auth目录下，执行`mvn spring-boot:run`
 
+  ##### application.yml
+
+  里面有项配置：`shiro.uaa.server.accessTokenExpires`，默认没有启用，具体可以看配置[说明](auth/src/main/resources/application.yml)
+
 - resource
 
   Resource Server
@@ -32,7 +36,17 @@
 
   ##### 运行
 
-  到resource目录下，执行`mvn spring-boot:run`，浏览器打开http://localhost:8080
+  到resource目录下，执行`mvn spring-boot:run`，浏览器打开http://localhost:8080/r1
+
+   Resource Server 2
+
+   ##### 页面权限说明
+
+   页面仅需要认证
+
+   到resource-2目录下，执行`mvn spring-boot:run`，浏览器打开http://localhost:8080/r2
+
+   可以用此Resource Server 2，结合Resource Server，可以看到看到单点登录，以及单点登出的效果
 
 #### 看起来
 

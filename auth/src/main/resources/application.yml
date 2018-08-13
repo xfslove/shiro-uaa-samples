@@ -6,8 +6,9 @@ shiro:
   loginUrl: /login
   uaa:
     server:
-      # access token 的过期时间影响resource server到auth server校验token的时间
-      # 当用户从一个应用登出后，会到auth server把相应的token删除
+      # shiro-uaa一个用户是否还在登录状态，是判断本地subject是否认证，然后，判断auth server给的token是否过期，access token的过期时间影响resource server到auth server校验token的时间
+      # 当用户从一个应用登出后，会到auth server把用户相关的token都删除
+      # 用户token过期，再用refresh token去获取token时就无法获取了，会让用户重新登录
       # 所以，此时间设置的短，可以变相的实现single sign out
       # 但是，同时会增加到auth server的校验次数
       # accessTokenExpires: 10

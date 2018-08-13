@@ -44,9 +44,9 @@
 
    页面仅需要认证
 
-   到resource-2目录下，执行`mvn spring-boot:run`，浏览器打开http://localhost:8080/r2
+   到resource-2目录下，执行`mvn spring-boot:run`，浏览器打开http://localhost:8280/r2
 
-   可以用此Resource Server 2，结合Resource Server，可以看到看到单点登录，以及单点登出的效果
+   可以用此Resource Server 2，结合Resource Server，看到单点登录，以及一种变相的单点登出（非实时）的效果
 
 #### 看起来
 

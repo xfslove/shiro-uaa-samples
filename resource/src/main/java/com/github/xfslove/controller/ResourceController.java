@@ -1,5 +1,6 @@
 package com.github.xfslove.controller;
 
+import com.github.xfslove.shiro.uaa.aop.BizLogger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -31,6 +32,7 @@ public class ResourceController {
     return "welcome";
   }
 
+  @BizLogger(return_ = true, remark = "test biz info perm1")
   @RequiresPermissions("perm1")
   @RequestMapping(value = "/view1", method = RequestMethod.GET)
   public String view1(
@@ -40,6 +42,7 @@ public class ResourceController {
     return "view1";
   }
 
+  @BizLogger(return_ = true, remark = "test biz info perm2")
   @RequiresPermissions("perm2")
   @RequestMapping(value = "/view2", method = RequestMethod.GET)
   public String view2(
@@ -49,6 +52,7 @@ public class ResourceController {
     return "view2";
   }
 
+  @BizLogger(return_ = true, remark = "test biz info perm3")
   @RequiresPermissions("perm3")
   @RequestMapping(value = "/view3", method = RequestMethod.GET)
   public String view3(
@@ -58,6 +62,7 @@ public class ResourceController {
     return "view3";
   }
 
+  @BizLogger(return_ = true, remark = "test biz info perm4")
   @RequiresPermissions("perm4")
   @RequestMapping(value = "/view4", method = RequestMethod.GET)
   public String view4(

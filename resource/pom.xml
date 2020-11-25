@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.19.RELEASE</version>
+    <version>1.5.17.RELEASE</version>
   </parent>
 
   <version>1.0.0-SNAPSHOT</version>
@@ -14,7 +14,7 @@
   <name>Shiro-UAA Resource Server</name>
 
   <properties>
-    <java.version>1.7</java.version>
+    <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <thymeleaf.version>3.0.6.RELEASE</thymeleaf.version>
@@ -24,7 +24,12 @@
     <dependency>
       <groupId>com.github.xfslove</groupId>
       <artifactId>shiro-uaa-resource-server</artifactId>
-      <version>1.0.2</version>
+      <version>1.0.7-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.xfslove</groupId>
+      <artifactId>shiro-uaa-biz-logger</artifactId>
+      <version>1.0.7-SNAPSHOT</version>
     </dependency>
 
     <dependency>
